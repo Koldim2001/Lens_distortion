@@ -1,4 +1,4 @@
 opencv-python
-imageio
 numpy
 matplotlib
+

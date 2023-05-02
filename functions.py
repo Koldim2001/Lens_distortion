@@ -123,7 +123,6 @@ def interctive_window(path, make_distortion=False):
     make_distortion = True -> коэффициенты со знаком + чтобы делать создать дисторсию
     '''
     import cv2
-    import imageio.v2 as imageio
     import numpy as np
 
     def img_intensity_change_x(x):
@@ -133,7 +132,8 @@ def interctive_window(path, make_distortion=False):
         pass
 
     # Считаем изображение:
-    img = imageio.imread(path)
+    img_bgr = cv2.imread(path)
+    img = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB) # Перевод и bgr в rgb
 
     # Создаем окно:
     cv2.namedWindow('LENS DISTORTION')
