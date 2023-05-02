@@ -152,11 +152,15 @@ def interctive_window(path, make_distortion=False):
             val = 1  # Поменяет знак на + при входе в функцию
         joint_1 = x * 0.05 * val
         joint_2 = y * 0.05 * val
+        if x == 0:
+            joint_1 = 0
+        if y == 0:
+            joint_2 = 0   
         output_img = distortion(img, joint_1, joint_2)
         output_img = cv2.cvtColor(output_img, cv2.COLOR_BGR2RGB)
-        cv2.putText(output_img, 'x_distortion:'+str(joint_1), (20, 20),
+        cv2.putText(output_img, 'x_distortion:'+str(round(joint_1, 3)), (20, 20),
                     fontFace=2, fontScale=1, color=(0, 0, 220), thickness=2)
-        cv2.putText(output_img, 'y_distortion:'+str(joint_2), (20, 60),
+        cv2.putText(output_img, 'y_distortion:'+str(round(joint_2, 3)), (20, 60),
                     fontFace=2, fontScale=1, color=(0, 0, 220), thickness=2)
         cv2.imshow('LENS DISTORTION',output_img)   
 
