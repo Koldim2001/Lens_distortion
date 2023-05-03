@@ -157,12 +157,20 @@ def interctive_window(path, make_distortion=False):
         if y == 0:
             joint_2 = 0   
         output_img = distortion(img, joint_1, joint_2)
+        
+        # resize в 1.5 раза чтоб было больше иображение внешне в окне:
+        dsize = (int(output_img.shape[1]*1.5), int(output_img.shape[0]*1.5)) 
+        output_img = cv2.resize(output_img, dsize, interpolation = cv2.INTER_AREA)
+
+        # Переод обратно в bgr:
         output_img = cv2.cvtColor(output_img, cv2.COLOR_BGR2RGB)
-        cv2.putText(output_img, 'x_distortion:'+str(round(joint_1, 3)), (20, 20),
-                    fontFace=2, fontScale=1, color=(0, 0, 220), thickness=2)
-        cv2.putText(output_img, 'y_distortion:'+str(round(joint_2, 3)), (20, 60),
-                    fontFace=2, fontScale=1, color=(0, 0, 220), thickness=2)
-        cv2.imshow('LENS DISTORTION',output_img)   
+
+        # Добавление текста и отображение output_img:
+        cv2.putText(output_img, 'x_distortion:'+str(round(joint_1, 3)), (20, 35),
+                    fontFace=1, fontScale=3, color=(0, 0, 220), thickness=3)
+        cv2.putText(output_img, 'y_distortion:'+str(round(joint_2, 3)), (20, 75),
+                    fontFace=1, fontScale=3, color=(0, 0, 220), thickness=3)
+        cv2.imshow('LENS DISTORTION', output_img)   
 
         # Обновление каждый 10 мс пока не нажмется кнопка закрытие окна
         if cv2.waitKey(10) == ord('q'):
