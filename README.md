@@ -18,7 +18,7 @@
   <img src="https://drive.google.com/uc?id=1UzjSfKbuhan5wcopBNVZbX5XcL21hoOm" alt="bot" width="740" height="600">
 </div>
 
-
+<br>
 >Пример работы скрипта с пояснениями можно посмотреть в файле jupiter notebook -
 [__show_example.ipynb__](https://nbviewer.org/github/Koldim2001/Lens_distortion/blob/main/show_example.ipynb) <br>
 >Все ключевые функции проекта находятся в файле [__functions.py__](https://github.com/Koldim2001/Lens_distortion/blob/main/functions.py)
