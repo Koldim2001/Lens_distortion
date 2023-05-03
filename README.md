@@ -15,10 +15,9 @@
 При запуске кода будет предложен вариант работы в интерактивном окне, которое позволяет подбирать величины искажения по оси x и y для компенсации аберрации. После их подбора можно будет запустить код заново, уже точно указав интересующие значения x_distortion, y_distortion коэффициентов.<br><br>
 Пример работы интерактивного режима:
 <div style="text-align:center;">
-  <img src="https://drive.google.com/uc?id=1_UAyxGrV9PXYmL1dtQU-F6Nu9rAqgq9W" alt="bot" width="370" height="300">
-  <img src="https://drive.google.com/uc?id=1nQZKBbkSOvCALdvfSTxoLFigxG7bNJcy" alt="bot" width="370" height="300">
+  <img src="https://drive.google.com/uc?id=1UzjSfKbuhan5wcopBNVZbX5XcL21hoOm" alt="bot" width="740" height="600">
 </div>
-<br>
+
 
 >Пример работы скрипта с пояснениями можно посмотреть в файле jupiter notebook -
 [__show_example.ipynb__](https://nbviewer.org/github/Koldim2001/Lens_distortion/blob/main/show_example.ipynb) <br>
